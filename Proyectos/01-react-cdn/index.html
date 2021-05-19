@@ -11,31 +11,17 @@
     </script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js">
     </script>
+
+    <link rel ="stylesheet" href="./style.css"/>
 </head>
 <body>
     <h1>Hola mundo desde react</h1>
      <div id = "root"></div>
-    <script type="text/babel">
+     <script type="text/babel" src="./components/Contador.js"></script>
+     <script type="text/babel" src="./index.js">
     
 
-    const Interpolar = ( ) => {
-        const [numero,setNumero] = React.useState(0);
-
-        setInterval(() => {
-            setNumero(numero + 1);
-        },1500);
-
-        return (
-            <div>
-                <h1>Timer: {numero}</h1>
-            </div>
-            );
-    }
-
-        ReactDOM.render(
-            <Interpolar/>
-            ,
-        document.getElementById("root"));
+    
     </script> 
 </body>
 </html>
