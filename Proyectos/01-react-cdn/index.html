@@ -16,31 +16,24 @@
     <h1>Hola mundo desde react</h1>
      <div id = "root"></div>
     <script type="text/babel">
-    // LEGACY VERSION
-    // class Saludo extends React.Component{
-    //     render(){
-    //         return (
-    //             <h1>
-    //                 Hola mundo - Legacy
-    //             </h1>
-    //         );
-    //     }
-    // }
+    
 
-    const Saludo = ( ) => {
-        return <h1>Hola mundo - new</h1>
+    const Interpolar = ( ) => {
+        const [numero,setNumero] = React.useState(0);
+
+        setInterval(() => {
+            setNumero(numero + 1);
+        },1500);
+
+        return (
+            <div>
+                <h1>Timer: {numero}</h1>
+            </div>
+            );
     }
 
         ReactDOM.render(
-            // <div>
-            //     <ul>
-            //         <li>Manzana</li>
-            //         <li>Mango</li>
-            //         <li>Uva</li>
-            //         <li>Papaya</li>
-            //     </ul>
-            // </div>,
-            <Saludo/>
+            <Interpolar/>
             ,
         document.getElementById("root"));
     </script> 
