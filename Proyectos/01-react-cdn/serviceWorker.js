@@ -19,14 +19,14 @@ self.addEventListener("install", (e) => {
     );
 }); 
 
-self.addEventListener("activate", (e) => {
-    const cacheWhitelist = [CACHE_NAME];
-
-    e.waitUntil(
-        caches.keys().then(cachesNames => {
-            return Promise.all(cachesNames.map(cacheName => {
-                return cacheWhitelist.indexOf(cacheName) === -1 && caches.delete(cacheName)  
-            }));
-        }).then(() => self.ClientRectList.claim())
-    );
+self.addEventListener("fetch", (e) => {
+   e.respondWith(
+    caches.match(e.request).then((res) => {
+        if (res) {
+            return res;
+        } 
+        
+        return fetch(e.request)
+    })
+   );
 }); 
