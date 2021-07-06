@@ -1,8 +1,8 @@
 import './App.css';
-import Contador from "./components/Contador"
+import Cards from "./components/Cards"
 
 const App = () => {
-  return <Contador inicial = {5} factor = {3}/>
+  return <Cards/>
 }
 
 export default App;
