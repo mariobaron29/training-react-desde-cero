@@ -1,13 +1,13 @@
 //import Calculadora from './components/Calculadora'
 //import State from './components/State'
-import Effect from './components/Effect'
+import LayoutEffect from './components/LayoutEffect'
 
 
 const App = () => {
   return (
   //<State/>
     <div className = "container text-center">
-      <Effect/>
+      <LayoutEffect/>
     </div>
     /*{
       
