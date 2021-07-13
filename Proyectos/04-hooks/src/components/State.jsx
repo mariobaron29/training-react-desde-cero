@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const State = () => {
 
@@ -11,11 +11,21 @@ const State = () => {
         console.log(state)
     }, 3000); */
 
+    // Ejemplo uso del useEffect
+    useEffect(() => {
+        //Este código sólo se ejecuta en la primera vez que se carga la página 
+        console.log(state)
+    }, [])
+    const handleClick = () => {
+        setState(state + 1)
+    }
+
     return (
         <div className="container text-center">
-            <h1>useState: {state}</h1>
-
+            <h1>useEffect</h1>
             <hr/>
+            Cuenta: {state}
+            <button onClick={handleClick}>+1</button>
         </div>
     )
 }
