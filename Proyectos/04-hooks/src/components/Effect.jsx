@@ -2,27 +2,20 @@ import { useState, useEffect } from "react"
 
 const Effect = () => {
 
-    const [users, setUsers] = useState([])
-    const [id, setId] = useState(1)
+    const [state, setState] = useState(0)
+
+    const evento = (e) => {
+            console.log("moviendo")
+        }
 
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users/")
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data)
-            setUsers(data)
-        })
-
-    }, [])
-
-    useEffect(() => {
-        setUsers([
-            {
-                hola: "test",
-            }
-        ])
-        console.log(users)
-    } ,[id])
+        if (state === "123") {
+            window.addEventListener("mousemove", evento)
+        }
+        return () => {
+            window.removeEventListener("mousemove",evento)
+        }
+    }, [state])
 
     const handleSubmit = (e) => {
         e.preventDefault() //Evita que se recarga el sitio
@@ -36,8 +29,11 @@ const Effect = () => {
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Search</label>
                     <input
-                        value = {id}
-                        onChange = {(e) => setId(e.target.value)}
+                        onChange = {(e) => {
+                            setState(e.target.value)
+                            console.log(e.target.value)
+                        }}
+                        value = {state}
                         type = "text"
                         className = "form-control"
                         id = "exampleInputEmail1"
