@@ -1,13 +1,13 @@
 //import Calculadora from './components/Calculadora'
 //import State from './components/State'
-import LayoutEffect from './components/LayoutEffect'
+import Ref from './components/Ref'
 
 
 const App = () => {
   return (
   //<State/>
     <div className = "container text-center">
-      <LayoutEffect/>
+      <Ref/>
     </div>
     /*{
       
