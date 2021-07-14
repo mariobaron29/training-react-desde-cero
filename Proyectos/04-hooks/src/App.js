@@ -1,13 +1,13 @@
 //import Calculadora from './components/Calculadora'
 //import State from './components/State'
-import Ref from './components/Ref'
+import Memorize from './components/memos/Memorize'
 
 
 const App = () => {
   return (
   //<State/>
     <div className = "container text-center">
-      <Ref/>
+      <Memorize/>
     </div>
     /*{
       
